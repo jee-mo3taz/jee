@@ -1,0 +1,59 @@
+<section class="site-section">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-7">
+              <div class="form-wrap">
+                  <h2 class="mb-5">Register new cours</h2>
+                  <form [(formGroup)]="angForm" novalidate>
+
+                      <div class="row">
+                          <div class="col-md-12 form-group">
+                              <label for="name">Nom cours</label>
+                              <input type="text" id="libelle" 
+                              class="form-control"  placeholder="Enter the name"
+                            formControlName="libelle" 
+                            #libelle>
+                          </div>
+                      </div>
+                      <div *ngIf="angForm.controls['libelle'].invalid && (angForm.controls['libelle'].dirty || angForm.controls['libelle'].touched)" class="alert alert-danger">
+                          <div *ngIf="angForm.controls['libelle'].errors.required">
+                            First Name  is required.
+                          </div>
+                        </div>
+
+                      <div class="row">
+                          <div class="col-md-12 form-group">
+                              <label for="name">num salle</label>
+                              <select formControlName="salle"  type="password"  class="form-control py-2 ">
+                                  <option
+                                   *ngFor="let salle of data" 
+                                   [ngValue]="salle" 
+                                   class="form-control py-2 "
+                                    id="salle" 
+                                  >
+                                   {{salle.nomS}}
+                                  </option>
+                              </select>
+                          </div>
+                      </div>
+                      <div *ngIf="angForm.controls['salle'].invalid && (angForm.controls['salle'].dirty || angForm.controls['salle'].touched)" class="alert alert-danger">
+                          <div *ngIf="angForm.controls['salle'].errors.required">
+                            First Name  is required.
+                          </div>
+                        </div>
+
+                      <div class="row">
+                          <div class="col-md-6 form-group">
+                              <input type="submit" value="Register" class="btn btn-primary px-5 py-2"
+                              [disabled]="angForm.pristine || angForm.invalid"
+                               value="Register"  
+                             (click)="add(angForm.value)"
+                              >
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

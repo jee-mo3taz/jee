@@ -1,0 +1,54 @@
+<h1>Edit universite</h1>
+
+<form [(formGroup)]="angForm" novalidate>
+    <div class="form-group">
+        <label for="">code departement	</label>
+        <input  type="number"
+         class="form-control"  
+         formControlName="codedep" 
+         #codedep disabled>
+      </div>
+     
+      <div class="form-group">
+        <label for="">nomdep	</label>
+        <input  type="text"
+         class="form-control"  placeholder="Enter the name"
+         formControlName="nomdep" 
+         #nomdep>
+      </div>
+      <div *ngIf="angForm.controls['nomdep'].invalid && (angForm.controls['nomdep'].dirty || angForm.controls['nomdep'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nomdep'].errors.required">
+            nomdep  is required.
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 form-group">
+            <label for="name">Universite</label>
+            <select formControlName="universite"  type="password"  class="form-control py-2 ">
+                <option
+                 *ngFor="let universite of data2" 
+                 [ngValue]="universite" 
+                 class="form-control py-2 "
+                  id="universite" 
+                >
+                 {{universite.nomuniv}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div *ngIf="angForm.controls['universite'].invalid && (angForm.controls['universite'].dirty || angForm.controls['universite'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['universite'].errors.required">
+          First Name  is required.
+        </div>
+      </div>
+       
+   
+     
+      <div class="form-group float-right">
+        <button  (click)="onClose()" cdkFocusInitial type="submit" class="btn btn-primary">Close</button>
+      <button  (click) = "edit(angForm)" 
+        type="submit" class="btn btn-primary">Edit</button>
+      </div>
+  
+  </form>

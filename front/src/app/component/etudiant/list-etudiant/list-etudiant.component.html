@@ -1,0 +1,57 @@
+<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/img/11.jpg);">
+
+  <div class="container custom" >
+  <h1>List Etudiant</h1>
+
+<div class="search-div">
+   
+    
+    <mat-form-field class="search-form-field " id="search" floatLabel="never">
+      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="listData"  >
+        <ng-container matColumnDef="numinsc">
+          <mat-header-cell *matHeaderCellDef  >numinsc</mat-header-cell>
+          <mat-cell  *matCellDef="let element">{{element.numinsc}}</mat-cell>
+        </ng-container>
+        
+        
+        <ng-container matColumnDef="nometu">
+          <mat-header-cell *matHeaderCellDef > Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.nometu}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="prenometu">
+          <mat-header-cell *matHeaderCellDef >Last Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.prenometu}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="adresseetu">
+            <mat-header-cell *matHeaderCellDef >Adresse</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.adresseetu}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="dateentee">
+            <mat-header-cell *matHeaderCellDef >dateentee</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.dateentee}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="cours">
+            <mat-header-cell *matHeaderCellDef>cours</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.cours.libelle}}</mat-cell>
+          </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+            <button mat-icon-button color="warn"  (click)=" onDelete(row.numinsc)"><mat-icon>delete_outline</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</section>

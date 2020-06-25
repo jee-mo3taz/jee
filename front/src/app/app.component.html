@@ -1,0 +1,140 @@
+  
+  <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand absolute" href="index.html">Skwela</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" >Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Etudiant</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" [routerLink]="['/Ajouteretu']">Ajouter</a>
+                  <a class="dropdown-item" [routerLink]="['/Listetu']">List</a>
+               
+                </div>
+
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Université</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="dropdown-item" [routerLink]="['/Adduniv']">Ajouter</a>
+                    <a class="dropdown-item" [routerLink]="['/Listuniv']">List</a>
+                </div>
+
+              </li>
+             
+            
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cours</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" [routerLink]="['/Addcours']">Ajouter</a>
+                  <a class="dropdown-item" [routerLink]="['/Listcour']">List</a>
+              </div>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salle</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="dropdown-item" [routerLink]="['/Addsalle']">Ajouter</a>
+                    <a class="dropdown-item" [routerLink]="['/Listsalle']">List</a>
+                </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Departement</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" [routerLink]="['/Adddep']">Ajouter</a>
+                  <a class="dropdown-item" [routerLink]="['/Listdep']">List</a>
+              </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Enseignant</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" [routerLink]="['/Addens']">Ajouter</a>
+                <a class="dropdown-item" [routerLink]="['/Listens']">List</a>
+            </div>
+        </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/Addsalle']">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav absolute-right">
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/dash']">dash</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link">Register</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/big_image_1.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-8 text-center">
+
+            <div class="mb-5 element-animate">
+              <h1>Learn From Doing</h1>
+              <p class="lead">Learn something new every day with skwela lorem ipsum dolor sit amet.</p>
+              <p><a href="#" class="btn btn-primary">Sign up and get a 7-day free trial</a></p>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <router-outlet></router-outlet>
+
+    
+
+
+    
+    <footer class="site-footer" style="background-image: url(assets/img/footer.jpg);">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3>About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, accusantium optio unde perferendis eum illum voluptatibus dolore tempora, consequatur minus asperiores temporibus reprehenderit.</p>
+          </div>
+          <div class="col-md-6 ml-auto">
+            <div class="row">
+              <div class="col-md-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Etudiant</a></li>
+                  <li><a href="#">Departement</a></li>
+                  <li><a href="#">Université</a></li>
+                  <li><a [routerLink]="['/Addcours']">cours</a></li>
+                </ul>
+              </div>
+              
+       
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+

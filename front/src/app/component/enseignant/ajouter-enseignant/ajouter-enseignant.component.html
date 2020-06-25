@@ -1,0 +1,229 @@
+<!-- <div class="a" style="background-image: url(assets/img/s-bg.jpg);">
+    <div class="container custom" >
+    <h1>Ajouter Department</h1>
+    
+    <form [(formGroup)]="angForm" novalidate>
+      <div class="form-group">
+            <label for="">nom 	</label>
+            <input  type="text"
+             class="form-control"  placeholder="Enter the name"
+             formControlName="nomens" 
+             #nomens>
+          </div>
+          <div *ngIf="angForm.controls['nomens'].invalid && (angForm.controls['nomens'].dirty || angForm.controls['nomens'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['nomens'].errors.required">
+                adresseens  is required.
+            </div>
+          </div>
+           
+          <div class="form-group">
+            <label for="">Prenom	</label>
+            <input class="form-control"
+                placeholder="Enter the Last Name"
+                formControlName="prenomens" 
+             #prenomens>
+          </div>
+          <div *ngIf="angForm.controls['prenomens'].invalid && (angForm.controls['prenomens'].dirty || angForm.controls['prenomens'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['prenomens'].errors.required">
+                prenomens  is required.
+            </div>
+          </div>
+         
+          
+          <div class="form-group">
+            <label for="">Adresse	</label>
+            <input class="form-control"
+                placeholder="Enter the Last Name"
+                formControlName="adresseens" 
+             #adresseens>
+          </div>
+      
+          <div *ngIf="angForm.controls['adresseens'].invalid && (angForm.controls['adresseens'].dirty || angForm.controls['adresseens'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['adresseens'].errors.required">
+                adresseens  is required.
+            </div>
+          </div>
+           
+          <div class="form-group">
+            <label for="">Diplome	</label>
+            <input class="form-control"
+                placeholder="Enter the Last Name"
+                formControlName="diplom" 
+             #diplom>
+          </div>
+          <div *ngIf="angForm.controls['diplom'].invalid && (angForm.controls['diplom'].dirty || angForm.controls['diplom'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['diplom'].errors.required">
+                diplome  is required.
+            </div>
+          </div>
+        
+           
+          <div class="form-group">
+            <label for="">Department	</label>
+            <input class="form-control"
+                placeholder="Enter the Last Name"
+                formControlName="departement" 
+             #departement>
+          </div>
+          <div *ngIf="angForm.controls['departement'].invalid && (angForm.controls['departement'].dirty || angForm.controls['departement'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['departement'].errors.required">
+                departement  is required.
+            </div>
+          </div>
+        
+           
+          <div class="form-group">
+            <label for="">Cours	</label>
+            <input class="form-control"
+                placeholder="Enter the Last Name"
+                formControlName="cours" 
+             #cours>
+          </div>
+          <div *ngIf="angForm.controls['cours'].invalid && (angForm.controls['cours'].dirty || angForm.controls['cours'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['cours'].errors.required">
+                cours  is required.
+            </div>
+          </div>
+         
+        
+     
+          <div class="form-group float-right">
+          <button  (click) = "add(nomens.value,prenomens.value,adresseens.value,diplom.value,departement.value,cours.value)" 
+            [disabled]="angForm.pristine || angForm.invalid"
+            type="submit" class="btn btn-primary">Create</button>
+          </div>
+      
+      </form>
+    </div>
+    </div> -->
+
+
+
+
+     <section class="site-section">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-7">
+                  <div class="form-wrap">
+                      <h2 class="mb-5">Register new Salle</h2>
+                      <form [(formGroup)]="angForm" novalidate>
+    
+                          <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">Nom enseignant</label>
+                                  <input type="text" id="nomens" 
+                                  class="form-control"  placeholder="Enter the name"
+                                formControlName="nomens" 
+                                #nomens>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['nomens'].invalid && (angForm.controls['nomens'].dirty || angForm.controls['nomens'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['nomens'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+                             <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">prenomens</label>
+                                  <input type="text" id="prenomens" 
+                                  class="form-control"  placeholder="Enter the name"
+                                formControlName="prenomens" 
+                                #prenomens>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['prenomens'].invalid && (angForm.controls['prenomens'].dirty || angForm.controls['prenomens'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['prenomens'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">Diplome</label>
+                                  <input type="text" id="diplom" 
+                                  class="form-control"  placeholder="Enter the name"
+                                formControlName="diplom" 
+                                #diplom>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['diplom'].invalid && (angForm.controls['diplom'].dirty || angForm.controls['diplom'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['diplom'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">adresse</label>
+                                  <input type="text" id="adresseens" 
+                                  class="form-control"  placeholder="Enter the name"
+                                formControlName="adresseens" 
+                                #adresseens>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['adresseens'].invalid && (angForm.controls['adresseens'].dirty || angForm.controls['adresseens'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['adresseens'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">Department</label>
+                                  <select formControlName="departement"  type="password"  class="form-control py-2 ">
+                                      <option
+                                       *ngFor="let departement of data2" 
+                                       [ngValue]="departement" 
+                                       class="form-control py-2 "
+                                        id="departement" 
+                                      >
+                                       {{departement.codedep}}
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['departement'].invalid && (angForm.controls['departement'].dirty || angForm.controls['departement'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['departement'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+
+                          <div class="row">
+                              <div class="col-md-12 form-group">
+                                  <label for="name">Cours</label>
+                                  <select formControlName="cours"  type="password"  class="form-control py-2 ">
+                                      <option
+                                       *ngFor="let cours of data" 
+                                       [ngValue]="cours" 
+                                       class="form-control py-2 "
+                                        id="cours" 
+                                      >
+                                       {{cours.libelle}}
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div *ngIf="angForm.controls['cours'].invalid && (angForm.controls['cours'].dirty || angForm.controls['cours'].touched)" class="alert alert-danger">
+                              <div *ngIf="angForm.controls['cours'].errors.required">
+                                First Name  is required.
+                              </div>
+                            </div>
+    
+                          <div class="row">
+                             <!--  <div class="col-md-6 form-group">
+                                  <input type="submit" value="Register" class="btn btn-primary px-5 py-2"
+                                  [disabled]="angForm.pristine || angForm.invalid"
+                                   value="Register"  
+                                 (click)="add(angForm.value)"
+                                  >
+                              </div> -->
+
+                              <div class="form-group float-right">
+                                <button  (click) = "add(angForm.value)" 
+                                  
+                                  type="submit" class="btn btn-primary">Create</button>
+                                </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section> 

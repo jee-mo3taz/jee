@@ -1,0 +1,104 @@
+<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/1.png);">
+
+<div class="container custom" >
+<h1>Ajouter Etudiant</h1>
+
+<form [(formGroup)]="angForm" novalidate>
+
+  <div class="row">
+    <div class="col-md-12 form-group">
+              <label for="">First Name	</label>
+        <input  type="text"
+         class="form-control"  placeholder="Enter the name"
+         formControlName="nometu" 
+         #nometu>
+    </div>
+      </div>
+      <div *ngIf="angForm.controls['nometu'].invalid && (angForm.controls['nometu'].dirty || angForm.controls['nometu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nometu'].errors.required">
+          First Name  is required.
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <label for="">Last Name	</label>
+        <input class="form-control"
+            placeholder="Enter the Last Name"
+            formControlName="prenometu" 
+         #prenometu>
+        </div>
+      </div>
+      <div *ngIf="angForm.controls['prenometu'].invalid && (angForm.controls['prenometu'].dirty || angForm.controls['prenometu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['prenometu'].errors.required">
+          Last Name  is required.
+        </div>
+      </div>
+       
+   
+     
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <label for="">adresse	</label>
+        <input  type="text"
+         class="form-control"  placeholder="Enter the adresse"
+         formControlName="adresseetu" 
+         #adresseetu>
+      </div>
+      </div>
+      <div *ngIf="angForm.controls['adresseetu'].invalid && (angForm.controls['adresseetu'].dirty || angForm.controls['adresseetu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['adresseetu'].errors.required">
+          adresse is required.
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="col-md-12 form-group">
+                  <label for="">date de naissance	</label>
+        <input  type="date"
+         class="form-control"  placeholder="Enter the dateentee"
+         formControlName="dateentee" 
+         #dateentee>
+        </div>
+      </div>
+      <div *ngIf="angForm.controls['dateentee'].invalid && (angForm.controls['dateentee'].dirty || angForm.controls['dateentee'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['dateentee'].errors.required">
+            dateentee  is required.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 form-group">
+            <label for="name">Cours</label>
+            <select formControlName="cours"  type="password"  class="form-control py-2 ">
+                <option
+                 *ngFor="let cours of data" 
+                 [ngValue]="cours" 
+                 class="form-control py-2 "
+                  id="cours" 
+                >
+                 {{cours.libelle}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div *ngIf="angForm.controls['cours'].invalid && (angForm.controls['cours'].dirty || angForm.controls['cours'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['cours'].errors.required">
+          First Name  is required.
+        </div>
+      </div>
+ 
+      <div class="form-group float-right">
+        <div class="col-md-6 form-group">
+          <input type="submit" value="Register" class="btn btn-primary px-5 py-2"
+          [disabled]="angForm.pristine || angForm.invalid"
+           value="Register"  
+         (click)="add(angForm.value)"
+          >
+      </div>
+      </div>
+  
+  </form>
+
+
+</div>
+</section>

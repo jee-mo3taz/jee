@@ -1,0 +1,82 @@
+      <section class="site-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="form-wrap">
+                        <h2 class="mb-5">Edit Salle</h2>
+                        <form [(formGroup)]="angForm" novalidate>
+                          <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">num salle</label>
+                                <input type="text" id="numS" 
+                                class="form-control"  placeholder="Enter the num_s"
+                              formControlName="numS" 
+                              #numS
+                              disabled>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="name">Nom Departement</label>
+                                    <input type="text" id="nomS" 
+                                    class="form-control"  placeholder="Enter the name"
+                                  formControlName="nomS" 
+                                  #nomS>
+                                </div>
+                            </div>
+                            <div *ngIf="angForm.controls['nomS'].invalid && (angForm.controls['nomS'].dirty || angForm.controls['nomS'].touched)" class="alert alert-danger">
+                                <div *ngIf="angForm.controls['nomS'].errors.required">
+                                  First Name  is required.
+                                </div>
+                              </div>
+                               <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="name">capacité Departement</label>
+                                    <input type="text" id="capacite" 
+                                    class="form-control"  placeholder="Enter the name"
+                                  formControlName="capacite" 
+                                  #capacite>
+                                </div>
+                            </div>
+                            <div *ngIf="angForm.controls['capacite'].invalid && (angForm.controls['capacite'].dirty || angForm.controls['capacite'].touched)" class="alert alert-danger">
+                                <div *ngIf="angForm.controls['capacite'].errors.required">
+                                  First Name  is required.
+                                </div>
+                              </div>
+       
+             <!--                <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label for="name">Cours</label>
+                                    <select formControlName="cours"  type="password"  class="form-control py-2 ">
+                                        <option
+                                         *ngFor="let cours of data" 
+                                         [ngValue]="cours" 
+                                         class="form-control py-2 "
+                                          id="cours" 
+                                        >
+                                         {{cours.code_C}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div *ngIf="angForm.controls['cours'].invalid && (angForm.controls['cours'].dirty || angForm.controls['cours'].touched)" class="alert alert-danger">
+                                <div *ngIf="angForm.controls['cours'].errors.required">
+                                  First Name  is required.
+                                </div>
+                              </div> -->
+      
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="submit" value="Register" class="btn btn-primary px-5 py-2"
+                                    [disabled]="angForm.pristine || angForm.invalid"
+                                     value="Register"  
+                                   (click)="edit(angForm.value)"
+                                    >
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>

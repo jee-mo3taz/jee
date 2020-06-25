@@ -1,0 +1,75 @@
+<h1>Edit Client</h1>
+
+<form [(formGroup)]="angForm" novalidate>
+    <div class="form-group">
+        <label for="">numinsc	</label>
+        <input  type="number"
+         class="form-control"  
+         formControlName="numinsc" 
+         #numinsc disabled>
+      </div>
+     
+      <div class="form-group">
+        <label for="">First Name	</label>
+        <input  type="text"
+         class="form-control"  placeholder="Enter the name"
+         formControlName="nometu" 
+         #nometu>
+      </div>
+      <div *ngIf="angForm.controls['nometu'].invalid && (angForm.controls['nometu'].dirty || angForm.controls['nometu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nometu'].errors.required">
+          First Name  is required.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="">Last Name	</label>
+        <input class="form-control"
+            placeholder="Enter the Last Name"
+            formControlName="prenometu" 
+         #prenometu>
+      </div>
+      <div *ngIf="angForm.controls['prenometu'].invalid && (angForm.controls['prenometu'].dirty || angForm.controls['prenometu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['prenometu'].errors.required">
+          Last Name  is required.
+        </div>
+      </div>
+       
+   
+     
+      <div class="form-group">
+        <label for="">adresse	</label>
+        <input  type="text"
+         class="form-control"  placeholder="Enter the adresse"
+         formControlName="adresseetu" 
+         #adresseetu>
+      </div>
+      <div *ngIf="angForm.controls['adresseetu'].invalid && (angForm.controls['adresseetu'].dirty || angForm.controls['adresseetu'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['adresseetu'].errors.required">
+          adresse is required.
+        </div>
+      </div>
+        <div class="form-group">
+          <p> Date Entrer </p>
+           <mat-form-field>
+             <mat-label>select date </mat-label>
+             <input matInput [matDatepicker]="datepickercolor" formControlName="dateentee" 
+             #dateentee>
+             <mat-datepicker-toggle matSuffix [for]="datepickercolor">
+             </mat-datepicker-toggle>
+             <mat-datepicker #datepickercolor color="warn"></mat-datepicker>
+           </mat-form-field>  
+        </div>
+      <div *ngIf="angForm.controls['dateentee'].invalid && (angForm.controls['dateentee'].dirty || angForm.controls['dateentee'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['dateentee'].errors.required">
+          dateExp  is required.
+        </div>
+      </div>
+      
+          <div class="form-group float-right">
+            <button  (click)="onClose()" cdkFocusInitial type="submit" class="btn btn-primary">Close</button>
+          <button  (click) = "edit(angForm.value)" 
+            type="submit" class="btn btn-primary">Edit</button>
+          </div>
+  
+  </form>
