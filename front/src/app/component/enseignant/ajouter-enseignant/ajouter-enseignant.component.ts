@@ -78,9 +78,9 @@ export class AjouterEnseignantComponent implements OnInit {
     }
     add(form){
       let enseignant :Enseignant;
-      enseignant  = new Enseignant(form.nomens,form.prenomens,form.adresseens,form.diplom,this.getSelecteddepartements(),this.getSelectedcours());  
+      enseignant  = new Enseignant(form.nomens,form.prenomens,form.adresseens,form.diplom,this.getSelectedcours(),this.getSelecteddepartements());  
       let body = JSON.stringify({ enseignant });            
-      this.CrudService.add(this.apiUrl,enseignant).subscribe(
+      this.CrudService.add(this.apiUrl,form).subscribe(
         result=>console.log("post :"+result) 
       );
     }

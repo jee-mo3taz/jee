@@ -44,6 +44,7 @@ export class AjouterDepartmentComponent implements OnInit {
     this.CrudService.add(this.apiUrl2,departement).subscribe(
       result=>console.log("post :"+result)
     );
+    
   }
   ngOnInit() {
     this.getUniversite();

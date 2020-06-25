@@ -6,9 +6,9 @@ export class Enseignant {
 	private nomens: String,
 	private prenomens: String,
    private adresseens: String,
-   private diplom: String,
-   private departements: Departements,
-   private cours: Cours){
+   private diplom: String ,
+   private cours: Cours,
+   private departements: Departements){
 
    }
   
